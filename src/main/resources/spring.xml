@@ -6,28 +6,11 @@
 http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"><!--  default-init-method="myInit" default-destory-method="cleanup">--> 
 
-	<bean id="parenttriangle" class="com.jade.javabrains.Triangle" abstract="true">
-		<property name="points">
-			<list>
-				<ref bean="pA" />
-			</list>
-		</property>
-	</bean>
 
-	<bean id="triangle1" class="com.jade.javabrains.Triangle" parent="parenttriangle"> 
-		<property name="points">
-			<list merge="true">
-				<ref bean="pB" />		
-				<ref bean="pC" />
-			</list>
-		</property>
-	</bean>
-	
-<!-- 	<bean id="triangle2" class="com.jade.javabrains.Triangle" parent="parenttriangle"> 
-		<property name="pB" ref="pB" />
-	</bean> -->
+
+	<bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byName" scope="singleton"  init-method="myInit" destroy-method="cleanup"/> 
 
 	<bean id="pA" class="com.jade.javabrains.Point">
 		<property name="x" value="0" />
