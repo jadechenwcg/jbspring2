@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle  {
+public class Triangle implements Shape {
 
 	private Point pA;
 	private Point pB;

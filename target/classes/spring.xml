@@ -33,5 +33,9 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	 	<property name="locations" value="pointconfig.properties"></property>
 	</bean>
 	
+	<bean id="circle" class="com.jade.javabrains.Circle">
+		<property name="center" ref="pA"/>
+	</bean>
+	
 
 </beans>
