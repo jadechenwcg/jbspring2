@@ -1,7 +1,8 @@
 package com.jade.javabrains;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.annotation.Resource;
 
 public class Circle implements Shape {
 	private Point center;
@@ -10,15 +11,25 @@ public class Circle implements Shape {
 		return center;
 	}
 
-//	@Required
-	@Autowired //first scan type, 2nd scan name
-	@Qualifier("circleRelated")
+	@Resource//(name="pC")
 	public void setCenter(Point center) {
 		this.center = center;
 	}
 
 	public void draw() {
 		System.out.println("Circle drawn and the center is [" + center.getX() + "," + center.getY() + "]");
+
+	}
+	
+	@PostConstruct
+	public void initCircle() {
+		System.out.println("initCircle");
+
+	}
+	
+	@PreDestroy
+	public void destroyCircle() {
+		System.out.println("destroyCircle");
 
 	}
 

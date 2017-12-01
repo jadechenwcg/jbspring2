@@ -21,19 +21,13 @@
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="pC" class="com.jade.javabrains.Point">
+	<bean id="center" class="com.jade.javabrains.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
 
 	<bean id="circle" class="com.jade.javabrains.Circle">
 	</bean>
-
-	<!-- <bean class='org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor' 
-		/> -->
-
-<!-- 	<bean -->
-<!-- 		class='org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor' /> -->
 
 
 </beans>
