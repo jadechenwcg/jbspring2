@@ -1,5 +1,8 @@
 package com.jade.javabrains;
 
+import org.springframework.stereotype.Component;
+
+
 public class Point {
 	private int x;
 	private int y;
