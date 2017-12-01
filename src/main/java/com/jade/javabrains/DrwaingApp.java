@@ -8,7 +8,7 @@ public class DrwaingApp {
 	public static void main(String[] args) {
 		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");		
 		ctx.registerShutdownHook();
-		Shape shape= (Shape) ctx.getBean("triangle");
+		Shape shape= (Shape) ctx.getBean("circle");
 		shape.draw();
 
 	}

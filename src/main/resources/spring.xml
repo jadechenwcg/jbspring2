@@ -13,8 +13,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<bean id="triangle" class="com.jade.javabrains.Triangle" autowire="byName"/> 
 
 	<bean id="pA" class="com.jade.javabrains.Point">
-		<property name="x" value="${pA.pointX}" />
-		<property name="y" value="${pA.pointY}" />
+		<property name="x" value="0" />
+		<property name="y" value="0" />
 	</bean>
 
 	<bean id="pB" class="com.jade.javabrains.Point">
@@ -27,15 +27,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		<property name="y" value="0" />
 	</bean>
 	
-	<bean class="com.jade.javabrains.NyBeanFactoryPP" />
-	
-	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-	 	<property name="locations" value="pointconfig.properties"></property>
-	</bean>
-	
 	<bean id="circle" class="com.jade.javabrains.Circle">
-		<property name="center" ref="pA"/>
 	</bean>
+	
+	<bean class='org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor' />
 	
 
 </beans>
