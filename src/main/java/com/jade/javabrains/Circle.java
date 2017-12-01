@@ -1,6 +1,7 @@
 package com.jade.javabrains;
 
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Circle implements Shape {
 	private Point center;
@@ -9,7 +10,9 @@ public class Circle implements Shape {
 		return center;
 	}
 
-	@Required
+//	@Required
+	@Autowired //first scan type, 2nd scan name
+	@Qualifier("circleRelated")
 	public void setCenter(Point center) {
 		this.center = center;
 	}
