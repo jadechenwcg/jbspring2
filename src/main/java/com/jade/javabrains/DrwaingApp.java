@@ -10,6 +10,8 @@ public class DrwaingApp {
 		ctx.registerShutdownHook();
 		Shape shape= (Shape) ctx.getBean("circle");
 		shape.draw();
+		
+		//System.out.println(ctx.getMessage("greeting", null, "default greeting", null));
 
 	}
 
